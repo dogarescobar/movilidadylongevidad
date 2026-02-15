@@ -2,15 +2,27 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "imágenes/subidas"
+public_folder: "/imágenes/subidas"
 
 collections:
-  - name: "pages"
-    label: "Páginas"
-    files:
-      - file: "index.html"
-        label: "Inicio"
-        name: "inicio"
+  - name: "productos"
+    label: "Productos"
+    file: "data/productos.json"
+    format: "json"
+    fields:
+      - label: "Listado"
+        name: "items"
+        widget: "list"
         fields:
-          - { label: "Título (pestaña)", name: "title", widget: "string", default: "AM Movilidad & Longevidad" }
+          - { label: "Nombre", name: "nombre", widget: "string" }
+          - { label: "Precio", name: "precio", widget: "string", required: false }
+          - { label: "Imagen", name: "imagen", widget: "image", required: false }
+          - { label: "Mensaje WhatsApp", name: "mensaje", widget: "string" }
+
+  - name: "ajustes"
+    label: "Ajustes"
+    file: "data/ajustes.json"
+    format: "json"
+    fields:
+      - { label: "WhatsApp (formato 57300...)", name: "whatsapp", widget: "string" }
