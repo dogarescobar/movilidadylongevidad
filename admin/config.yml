@@ -8,21 +8,28 @@ public_folder: "/images/uploads"
 collections:
   - name: "productos"
     label: "Productos"
-    file: "data/productos.json"
-    format: "json"
-    fields:
-      - label: "Listado"
-        name: "items"
-        widget: "list"
+    files:
+      - file: "data/productos.json"
+        label: "Listado de productos"
+        name: "productos"
+        format: "json"
         fields:
-          - { label: "Nombre", name: "nombre", widget: "string" }
-          - { label: "Precio", name: "precio", widget: "string", required: false }
-          - { label: "Imagen", name: "imagen", widget: "image", required: false }
-          - { label: "Mensaje WhatsApp", name: "mensaje", widget: "string" }
+          - label: "Listado"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Precio", name: "precio", widget: "string", required: false }
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - { label: "Mensaje WhatsApp", name: "mensaje", widget: "string" }
 
   - name: "ajustes"
     label: "Ajustes"
-    file: "data/ajustes.json"
-    format: "json"
-    fields:
-      - { label: "WhatsApp (formato 57300...)", name: "whatsapp", widget: "string" }
+    files:
+      - file: "data/ajustes.json"
+        label: "Configuración del sitio"
+        name: "ajustes"
+        format: "json"
+        fields:
+          - { label: "WhatsApp (formato 57300...)", name: "whatsapp", widget: "string" }
+
