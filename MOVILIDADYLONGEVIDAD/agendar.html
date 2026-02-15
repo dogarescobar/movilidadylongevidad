@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agendar cita | Movilidad y Longevidad</title>
+</head>
+<body style="font-family: Arial; background:#0b1220; color:white; padding:40px;">
+
+<h1>Agenda tu cita</h1>
+<p>Déjanos tus datos y te contactamos por WhatsApp.</p>
+
+<form name="agendamiento" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias-agenda.html">
+
+  <input type="hidden" name="form-name" value="agendamiento" />
+
+  <p style="display:none">
+    <label>No llenar: <input name="bot-field" /></label>
+  </p>
+
+  <p>Nombre:</p>
+  <input name="nombre" required>
+
+  <p>WhatsApp:</p>
+  <input name="whatsapp" required>
+
+  <p>Servicio:</p>
+  <select name="servicio" required>
+    <option value="">Selecciona…</option>
+    <option>Fisioterapia</option>
+    <option>Rehabilitación</option>
+    <option>Adulto mayor</option>
+    <option>Dolor de espalda</option>
+  </select>
+
+  <p>Fecha:</p>
+  <input type="date" name="fecha" required>
+
+  <p>Hora:</p>
+  <input type="time" name="hora" required>
+
+  <p>Mensaje (opcional):</p>
+  <textarea name="mensaje" rows="4" style="width:320px;"></textarea>
+
+  <br><br>
+  <button type="submit">Enviar solicitud</button>
+
+</form>
+
+<p style="margin-top:20px;">
+  <a href="/index.html" style="color:#7dd3fc;">Volver al inicio</a>
+</p>
+
+</body>
+</html>
