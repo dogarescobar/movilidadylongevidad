@@ -9,7 +9,7 @@ collections:
   - name: "productos"
     label: "Productos"
     files:
-      - file: "data/productos.json"
+      - file: "MOVILIDADYLONGEVIDAD/data/productos.json"
         label: "Listado de productos"
         name: "productos"
         format: "json"
@@ -26,10 +26,9 @@ collections:
   - name: "ajustes"
     label: "Ajustes"
     files:
-      - file: "data/ajustes.json"
+      - file: "MOVILIDADYLONGEVIDAD/data/ajustes.json"
         label: "Configuración del sitio"
         name: "ajustes"
         format: "json"
         fields:
           - { label: "WhatsApp (formato 57300...)", name: "whatsapp", widget: "string" }
-
