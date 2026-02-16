@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "productos"
+    label: "Productos"
+    files:
+      - file: "data/productos.json"
+        label: "Listado de productos"
+        name: "productos"
+        format: "json"
+        fields:
+          - label: "Listado"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Precio", name: "precio", widget: "string", required: false }
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - { label: "Mensaje WhatsApp", name: "mensaje", widget: "string" }
+
+  - name: "ajustes"
+    label: "Ajustes"
+    files:
+      - file: "data/ajustes.json"
+        label: "Configuración del sitio"
+        name: "ajustes"
+        format: "json"
+        fields:
+          - { label: "WhatsApp (formato 57300...)", name: "whatsapp", widget: "string" }
