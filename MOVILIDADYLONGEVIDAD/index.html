@@ -248,11 +248,27 @@ Añadir
 </a>
 </div>
 <!-- Floating WhatsApp Button -->
-<a class="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 active:scale-95 transition-transform" href="https://wa.me/573187951886">
+<a class="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 active:scale-95 transition-transform"
+   href="#" id="btn-whatsapp">
 <svg fill="currentColor" height="30" viewbox="0 0 24 24" width="30">
 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.185-.573c.948.517 1.882.887 3.144.887 3.185 0 5.769-2.587 5.77-5.766 0-3.181-2.585-5.769-5.768-5.769zm3.391 8.221c-.144.405-.837.774-1.171.823-.312.045-.698.071-1.147-.071-.274-.086-.615-.171-1.047-.361-1.833-.805-3.033-2.671-3.125-2.793-.092-.122-.75-1.001-.75-1.912 0-.911.472-1.359.64-1.558.168-.198.366-.247.488-.247.122 0 .245.001.351.006.114.004.267-.043.418.326.155.378.531 1.293.578 1.386.046.092.076.2.015.321-.061.121-.091.198-.183.305-.092.106-.192.235-.274.316-.091.091-.186.19-.08.373.106.183.471.777 1.013 1.258.697.621 1.284.814 1.467.906.183.091.289.076.396-.046.106-.122.457-.531.579-.715.122-.182.244-.152.411-.092.167.061 1.066.503 1.249.593.182.091.304.137.349.213.045.076.045.441-.099.846z"></path>
 </svg>
 </a>
 <!-- Spacer for bottom nav -->
-<div class="h-20"></div>
+<div class="h-20"></div> 
+<script>
+(function () {
+  fetch('/data/ajustes.json')
+    .then(r => r.json())
+    .then(cfg => {
+      const raw = (cfg.whatsapp || '').toString().replace(/\D/g, '');
+      if (!raw) return;
+
+      const btn = document.getElementById('btn-whatsapp');
+      if (btn) btn.href = 'https://wa.me/' + raw;
+    })
+    .catch(() => {});
+})();
+</script>
+     
 </body></html>
